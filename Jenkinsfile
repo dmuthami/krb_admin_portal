@@ -13,13 +13,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'npm install'
+                sh 'docker build -t dmuthami/docker-react -f Dockerfile.dev .'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'npm test'
+                sh 'docker run dmuthami/docker-react npm run test -- --coverage'
             }
         }
     }
