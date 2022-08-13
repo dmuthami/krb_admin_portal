@@ -4,8 +4,8 @@ pipeline {
 
     agent {
         docker {
-            image 'node'
-            args '-u root'
+            image 'node:16.6-alpine'
+            args '-u dmuthami'
         }
     }
 
